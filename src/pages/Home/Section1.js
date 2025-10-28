@@ -24,7 +24,7 @@ const Section1 = () => {
               <h1 className="text-white">New Burger</h1>
               <h2 className="text-white">With Onion</h2>
               <p className="text-white pt-2 pb-4">
-                Sink your teeth into our freshly grilled burger topped with
+                Sinks your teeth into our freshly grilled burger topped with
                 caramelized onions, melted cheese, and crisp lettuce. Juicy,
                 flavorful, and made with 100% premium ingredients — it’s the
                 perfect bite every time.
