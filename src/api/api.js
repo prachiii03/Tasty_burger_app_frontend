@@ -72,7 +72,7 @@ export const authAPI = {
   delete: (url) => API.delete(url),
 };
 
-// Products API - Now correctly points to /products
+// Products API
 export const productsAPI = {
   getProducts: () => API.get('/products'),
   getProduct: (id) => API.get(`/products/${id}`),
@@ -85,6 +85,20 @@ export const cartAPI = {
   addToCart: (data) => API.post('/cart', data),
   removeFromCart: (data) => API.post('/cart/remove', data),
   clearCart: () => API.post('/cart/clear'),
+};
+
+// Orders API
+export const ordersAPI = {
+  createOrder: (data) => API.post('/orders', data),
+  getOrders: () => API.get('/orders'),
+  getOrder: (id) => API.get(`/orders/${id}`),
+  getUserOrders: () => API.get('/orders/user'),
+};
+
+// ✅ FIXED: PhonePe endpoints - use API directly instead of authAPI
+export const phonepeAPI = {
+  createPayment: (paymentData) => API.post('/phonepe/pay', paymentData),
+  checkStatus: (statusData) => API.post('/phonepe/check-status', statusData),
 };
 
 // User Dashboard API calls

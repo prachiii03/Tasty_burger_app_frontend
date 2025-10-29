@@ -10,6 +10,7 @@ export const AuthProvider = ({ children }) => {
       if (!userData || userData === "undefined") return null;
       const parsedUser = JSON.parse(userData);
       
+      // ✅ CRITICAL: Set auth token immediately when initializing state
       if (parsedUser?.token) {
         setAuthToken(parsedUser.token);
       }
@@ -17,6 +18,7 @@ export const AuthProvider = ({ children }) => {
       return parsedUser;
     } catch (err) {
       console.error("Failed to parse user from localStorage:", err);
+      localStorage.removeItem("user"); // ✅ Clean up bad data
       return null;
     }
   });
@@ -24,10 +26,11 @@ export const AuthProvider = ({ children }) => {
   const [wishlist, setWishlist] = useState([]);
   const [wishlistLoading, setWishlistLoading] = useState(false);
 
-  // Sync localStorage with user state
+  // ✅ Sync localStorage with user state
   useEffect(() => {
     if (user?.token) {
       localStorage.setItem("user", JSON.stringify(user));
+      setAuthToken(user.token); // ✅ Ensure token is set
       loadWishlist();
     } else {
       localStorage.removeItem("user");
@@ -46,7 +49,6 @@ export const AuthProvider = ({ children }) => {
     try {
       setWishlistLoading(true);
       const response = await authAPI.get('/user/wishlist');
-      // Handle different response structures
       setWishlist(response.data?.data || response.data || []);
     } catch (error) {
       console.error("Error loading wishlist:", error);
@@ -74,7 +76,7 @@ export const AuthProvider = ({ children }) => {
     try {
       setWishlistLoading(true);
       await authAPI.post('/user/wishlist', { productId });
-      await loadWishlist(); // Reload the updated wishlist
+      await loadWishlist();
     } catch (error) {
       console.error("Error adding to wishlist:", error);
       throw new Error(error.response?.data?.message || "Failed to add to wishlist");
@@ -92,7 +94,7 @@ export const AuthProvider = ({ children }) => {
     try {
       setWishlistLoading(true);
       await authAPI.delete(`/user/wishlist/${productId}`);
-      await loadWishlist(); // Reload the updated wishlist
+      await loadWishlist();
     } catch (error) {
       console.error("Error removing from wishlist:", error);
       throw new Error(error.response?.data?.message || "Failed to remove from wishlist");
@@ -121,7 +123,6 @@ export const AuthProvider = ({ children }) => {
         setUser(userData);
         return userData;
       } else if (response.data?.token) {
-        // Handle different response structure
         const userData = { ...response.data, token: response.data.token };
         setAuthToken(userData.token);
         setUser(userData);

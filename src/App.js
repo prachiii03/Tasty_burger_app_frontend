@@ -5,6 +5,7 @@ import { ToastContainer } from "react-toastify";
 import { AuthProvider, AuthContext } from "./context/AuthContext";
 import { CartProvider } from "./context/CartContext";
 import Layout from "./components/Layouts/Layout";
+import PaymentStatus from './pages/PaymentStatus/PaymentStatus';
 
 // Public pages
 import Home from "./pages/Home/Home";
@@ -129,6 +130,18 @@ function App() {
             {/* Auth Pages */}
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+
+            {/* Payment Status Page */}
+            <Route
+              path="/payment-status"
+              element={
+                <ProtectedRoute>
+                  <Layout>
+                    <PaymentStatus />
+                  </Layout>
+                </ProtectedRoute>
+              }
+            />
 
             {/* Protected (non-dashboard) */}
             <Route
