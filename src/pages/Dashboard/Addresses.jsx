@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { userAPI } from '../../api/api';
+import { AuthContext } from '../../context/AuthContext';
 
 const Addresses = () => {
+  const { user } = useContext(AuthContext);
   const [addresses, setAddresses] = useState([]);
   const [loading, setLoading] = useState(true);
   const [showForm, setShowForm] = useState(false);
@@ -16,15 +18,20 @@ const Addresses = () => {
   });
 
   useEffect(() => {
-    fetchAddresses();
-  }, []);
+    if (user) {
+      fetchAddresses();
+    } else {
+      setLoading(false);
+    }
+  }, [user]);
 
   const fetchAddresses = async () => {
     try {
       const response = await userAPI.getAddresses();
-      setAddresses(response.data.data);
+      setAddresses(response.data.data || []);
     } catch (error) {
       console.error('Error fetching addresses:', error);
+      setAddresses([]);
     } finally {
       setLoading(false);
     }
@@ -32,6 +39,7 @@ const Addresses = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!user) return;
     
     try {
       if (editingAddress) {
@@ -59,12 +67,12 @@ const Addresses = () => {
   const handleEdit = (address) => {
     setEditingAddress(address);
     setFormData({
-      street: address.street,
-      city: address.city,
-      state: address.state,
-      zipCode: address.zipCode,
-      country: address.country,
-      isDefault: address.isDefault
+      street: address.street || '',
+      city: address.city || '',
+      state: address.state || '',
+      zipCode: address.zipCode || '',
+      country: address.country || '',
+      isDefault: address.isDefault || false
     });
     setShowForm(true);
   };
@@ -87,8 +95,28 @@ const Addresses = () => {
     });
   };
 
+  // ✅ Add null check for user
+  if (!user) {
+    return (
+      <div className="container-fluid">
+        <div className="alert alert-warning text-center">
+          <h4>Please log in to manage addresses</h4>
+        </div>
+      </div>
+    );
+  }
+
   if (loading) {
-    return <div className="text-center py-5">Loading...</div>;
+    return (
+      <div className="container-fluid">
+        <div className="text-center py-5">
+          <div className="spinner-border text-primary" role="status">
+            <span className="visually-hidden">Loading...</span>
+          </div>
+          <p className="mt-2">Loading your addresses...</p>
+        </div>
+      </div>
+    );
   }
 
   return (

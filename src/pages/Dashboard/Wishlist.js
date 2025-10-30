@@ -1,23 +1,28 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { userAPI, productsAPI } from '../../api/api';
+import { AuthContext } from '../../context/AuthContext';
 import { FaHeart, FaShoppingCart, FaTrash, FaEye } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const Wishlist = () => {
+  const { user } = useContext(AuthContext);
   const [wishlist, setWishlist] = useState([]);
   const [loading, setLoading] = useState(true);
   const [message, setMessage] = useState('');
 
   useEffect(() => {
-    fetchWishlist();
-  }, []);
+    if (user) {
+      fetchWishlist();
+    } else {
+      setLoading(false);
+    }
+  }, [user]);
 
   const fetchWishlist = async () => {
     try {
       const response = await userAPI.getWishlist();
-      console.log('Wishlist response:', response.data); // Debug log
+      console.log('Wishlist response:', response.data);
       
-      // Handle the new structure - direct array of products
       const wishlistData = response.data.data || response.data || [];
       console.log('Processed wishlist data:', wishlistData);
       
@@ -60,7 +65,6 @@ const Wishlist = () => {
   const clearWishlist = async () => {
     if (window.confirm('Are you sure you want to clear your entire wishlist?')) {
       try {
-        // Remove each item individually
         for (const product of wishlist) {
           await userAPI.removeFromWishlist(product._id);
         }
@@ -74,7 +78,6 @@ const Wishlist = () => {
     }
   };
 
-  // Safe image URL construction
   const getImageUrl = (imagePath) => {
     if (!imagePath) return null;
     
@@ -93,19 +96,25 @@ const Wishlist = () => {
     return `${baseUrl}${imagePath.startsWith('/') ? '' : '/'}${imagePath}`;
   };
 
+  // ✅ Add null check for user
+  if (!user) {
+    return (
+      <div className="container-fluid">
+        <div className="alert alert-warning text-center">
+          <h4>Please log in to view your wishlist</h4>
+        </div>
+      </div>
+    );
+  }
+
   if (loading) {
     return (
       <div className="container-fluid">
-        <div className="row">
-          <div className="col-12">
-            <h2 className="mb-4">My Wishlist</h2>
-            <div className="text-center py-5">
-              <div className="spinner-border text-primary" role="status">
-                <span className="visually-hidden">Loading...</span>
-              </div>
-              <p className="mt-2">Loading your wishlist...</p>
-            </div>
+        <div className="text-center py-5">
+          <div className="spinner-border text-primary" role="status">
+            <span className="visually-hidden">Loading...</span>
           </div>
+          <p className="mt-2">Loading your wishlist...</p>
         </div>
       </div>
     );
@@ -177,7 +186,6 @@ const Wishlist = () => {
 
               <div className="row">
                 {wishlist.map((product) => {
-                  // Safe data extraction with fallbacks
                   const productId = product?._id;
                   const productName = product?.name || 'Unknown Product';
                   const productPrice = product?.price || 0;
@@ -185,7 +193,6 @@ const Wishlist = () => {
                   const productDescription = product?.description || '';
                   const productAvailability = product?.availability !== false;
                   
-                  // Handle images safely
                   const productImage = product?.images?.[0];
                   const imageUrl = getImageUrl(productImage);
 
@@ -211,7 +218,6 @@ const Wishlist = () => {
                             />
                           ) : null}
                           
-                          {/* Fallback when image fails or doesn't exist */}
                           <div 
                             className="card-img-top h-100 w-100 d-flex align-items-center justify-content-center bg-light"
                             style={{ 
@@ -283,7 +289,7 @@ const Wishlist = () => {
                       </div>
                     </div>
                   );
-                }).filter(Boolean) /* Remove any null items */}
+                }).filter(Boolean)}
               </div>
             </>
           )}
