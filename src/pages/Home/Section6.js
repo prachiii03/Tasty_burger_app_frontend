@@ -8,6 +8,7 @@ import Preview from "../../assets/hero/preview-removebg-preview.png";
 import Preview2 from "../../assets/hero/preview_2-removebg-preview.png";
 import Preview3 from "../../assets/hero/preview_3-removebg-preview.png";
 import Preview4 from "../../assets/hero/preview_4-removebg-preview.png";
+import BackgroundImage from "../../assets/hero/download.png";
 
 function Section6() {
   return (
@@ -23,8 +24,9 @@ function Section6() {
                     <img src={User1} className="img-fluid" alt="User-1" />
                   </div>
                   <p>
-                    "The customer service was exceptional, and the team went above 
-                    and beyond to ensure my order arrived on time. Highly recommended!"
+                    "The customer service was exceptional, and the team went
+                    above and beyond to ensure my order arrived on time. Highly
+                    recommended!"
                   </p>
                   <div className="item_rating mb-2">
                     <i className="bi bi-star-fill"></i>
@@ -42,8 +44,9 @@ function Section6() {
                     <img src={User2} className="img-fluid" alt="User-2" />
                   </div>
                   <p>
-                    "I am extremely satisfied with the quality of the products. 
-                    Everything exceeded my expectations, from packaging to delivery."
+                    "I am extremely satisfied with the quality of the products.
+                    Everything exceeded my expectations, from packaging to
+                    delivery."
                   </p>
                   <div className="item_rating mb-2">
                     <i className="bi bi-star-fill"></i>
@@ -61,8 +64,9 @@ function Section6() {
                     <img src={User3} className="img-fluid" alt="User-3" />
                   </div>
                   <p>
-                    "The interface was so easy to use, and the support team was 
-                    always available to guide me. Definitely a 5-star experience."
+                    "The interface was so easy to use, and the support team was
+                    always available to guide me. Definitely a 5-star
+                    experience."
                   </p>
                   <div className="item_rating mb-2">
                     <i className="bi bi-star-fill"></i>
@@ -80,8 +84,9 @@ function Section6() {
                     <img src={User4} className="img-fluid" alt="User-4" />
                   </div>
                   <p>
-                    "Fast delivery, excellent packaging, and a fantastic shopping 
-                    experience overall. I will definitely return for more purchases."
+                    "Fast delivery, excellent packaging, and a fantastic
+                    shopping experience overall. I will definitely return for
+                    more purchases."
                   </p>
                   <div className="item_rating mb-2">
                     <i className="bi bi-star-fill"></i>
@@ -99,258 +104,351 @@ function Section6() {
       </section>
 
       {/* New Promo Section */}
-     <section
-      style={{
-        background: "radial-gradient(circle at center, #ffb300, #ff9800)",
-        padding: "80px 0",
-        overflow: "hidden",
-      }}
-    >
-      <Container>
-        <Row className="align-items-center">
-          {/* LEFT TEXT */}
-          <Col lg={5}>
-            <div style={{ paddingLeft: "40px" }}>
-              <h2
-                style={{
-                  fontSize: "4.5rem",
-                  fontWeight: "bold",
-                  color: "#fff",
-                  lineHeight: "1.1",
-                  textTransform: "uppercase",
-                  marginBottom: "20px",
-                }}
-              >
-                THE <br />
-                <span style={{ fontSize: "5.5rem" }}>COUNTY</span>
-                <br />
-                <span style={{ fontSize: "5.5rem" }}>GENERAL</span>
-              </h2>
+      <section
+        style={{
+          backgroundImage: `url(${BackgroundImage})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          padding: "100px 0",
+          overflow: "hidden",
+          position: "relative",
+        }}
+      >
+        <Container style={{ position: "relative", zIndex: 2 }}>
+          <Row className="align-items-center">
+            {/* LEFT TEXT */}
+            <Col lg={5}>
+              <div style={{ paddingLeft: "40px" }}>
+                <h2
+                  style={{
+                    fontSize: "4.5rem",
+                    fontWeight: "bold",
+                    color: "#fff",
+                    lineHeight: "1.1",
+                    textTransform: "uppercase",
+                    marginBottom: "20px",
+                    textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+                  }}
+                >
+                  THE <br />
+                  <span style={{ fontSize: "5.5rem" }}>COUNTY</span>
+                  <br />
+                  <span style={{ fontSize: "5.5rem" }}>GENERAL</span>
+                </h2>
 
-              <p
-                style={{
-                  color: "#fff",
-                  fontSize: "18px",
-                  marginBottom: "30px",
-                  maxWidth: "400px",
-                  opacity: "0.95",
-                }}
-              >
-                Semper lacus cursus porta a primis feugiat ligula risus auctor
-                rhoncus semper undo
-              </p>
+                <p
+                  style={{
+                    color: "#fff",
+                    fontSize: "18px",
+                    marginBottom: "30px",
+                    maxWidth: "400px",
+                    opacity: "0.95",
+                    textShadow: "1px 1px 2px rgba(0,0,0,0.5)",
+                  }}
+                >
+                  Semper lacus cursus porta a primis feugiat ligula risus auctor
+                  rhoncus semper undo
+                </p>
 
-              <a
-                href="#order"
-                style={{
-                  backgroundColor: "#e50914",
-                  color: "#fff",
-                  padding: "15px 40px",
-                  borderRadius: "5px",
-                  textDecoration: "none",
-                  fontWeight: "700",
-                  display: "inline-block",
-                  textTransform: "uppercase",
-                  letterSpacing: "1px",
-                  fontSize: "16px",
-                  transition: "background-color 0.3s ease",
-                }}
-                onMouseOver={(e) => (e.target.style.backgroundColor = "#c3070f")}
-                onMouseOut={(e) => (e.target.style.backgroundColor = "#e50914")}
-              >
-                ORDER NOW
-              </a>
-            </div>
-          </Col>
+                <a
+                  href="#order"
+                  style={{
+                    backgroundColor: "#e50914",
+                    color: "#fff",
+                    padding: "15px 40px",
+                    borderRadius: "5px",
+                    textDecoration: "none",
+                    fontWeight: "700",
+                    display: "inline-block",
+                    textTransform: "uppercase",
+                    letterSpacing: "1px",
+                    fontSize: "16px",
+                    transition: "all 0.3s ease",
+                    boxShadow: "0 4px 15px rgba(0,0,0,0.3)",
+                  }}
+                  onMouseOver={(e) => {
+                    e.target.style.backgroundColor = "#c3070f";
+                    e.target.style.transform = "translateY(-2px)";
+                  }}
+                  onMouseOut={(e) => {
+                    e.target.style.backgroundColor = "#e50914";
+                    e.target.style.transform = "translateY(0)";
+                  }}
+                >
+                  ORDER NOW
+                </a>
+              </div>
+            </Col>
 
-          {/* RIGHT SIDE (BURGER + BADGE + CARDS) */}
-          <Col lg={7}>
-            <div
-              style={{
-                position: "relative",
-                textAlign: "center",
-              }}
-            >
-              {/* Main Burger */}
-              <img
-                src={Preview}
-                alt="Main Burger"
-                style={{
-                  maxWidth: "85%",
-                  position: "relative",
-                  zIndex: 2,
-                  marginLeft: "-80px",
-                }}
-              />
-
-              {/* Price Badge - moved up */}
-            <div
-  style={{
-    position: "absolute",
-    top: "10px", // keep it high above burger
-    left: "62%", // adjust to match burger position
-    transform: "translateX(-50%)",
-    width: "150px",
-    height: "150px",
-    borderRadius: "50%",
-    overflow: "hidden",
-    zIndex: 3,
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    boxShadow: "0 4px 10px rgba(0,0,0,0.3)",
-  }}
->
-  {/* Image Background */}
-  <img
-    src={Preview2}
-    alt="Discount Badge"
-    style={{
-      width: "100%",
-      height: "100%",
-      objectFit: "cover",
-      position: "absolute",
-      top: 0,
-      left: 0,
-      zIndex: 1,
-    }}
-  />
-
-  {/* Text on top of badge */}
-  {/* <div
-    style={{
-      position: "relative",
-      zIndex: 2,
-      color: "#fff",
-      textAlign: "center",
-      textShadow: "1px 1px 2px rgba(0,0,0,0.5)",
-      padding: "10px",
-    }}
-  >
-    <p
-      style={{
-        margin: 0,
-        fontSize: "18px",
-        fontWeight: "700",
-        textTransform: "uppercase",
-      }}
-    >
-      Only
-    </p>
-    <h3
-      style={{
-        margin: "5px 0",
-        fontSize: "34px",
-        fontWeight: "900",
-      }}
-    >
-      $9.99
-    </h3>
-    <p
-      style={{
-        fontSize: "13px",
-        margin: 0,
-        opacity: "0.9",
-      }}
-    >
-      Code: 0841
-    </p>
-  </div> */}
-</div>
-
-              {/* Right Cards - moved more to right */}
+            {/* RIGHT SIDE (BURGER + BADGE + CARDS) */}
+            <Col lg={7}>
               <div
                 style={{
-                  position: "absolute",
-                  right: "-80px", // shifted more right
-                  top: "8%",
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "25px",
-                  zIndex: 3,
+                  position: "relative",
+                  textAlign: "center",
+                  height: "600px",
                 }}
               >
-                {/* Card 1 */}
+                {/* Main Burger - Increased Size */}
+                <img
+                  src={Preview}
+                  alt="Main Burger"
+                  style={{
+                    maxWidth: "95%",
+                    position: "relative",
+                    zIndex: 2,
+                    marginLeft: "-180px",
+                    transform: "scale(1.2)",
+                    filter: "drop-shadow(0 15px 25px rgba(0,0,0,0.4))",
+                  }}
+                />
+
+                {/* Price Badge with Price */}
                 <div
                   style={{
-                    backgroundColor: "rgba(255, 152, 0, 0.95)",
-                    padding: "20px 25px",
-                    borderRadius: "15px",
-                    textAlign: "center",
-                    border: "2px solid rgba(255, 255, 255, 0.6)",
-                    width: "200px",
-                    cursor: "pointer",
-                    boxShadow: "0 8px 20px rgba(0,0,0,0.2)",
-                    transition: "transform 0.3s ease",
+                    position: "absolute",
+                    top: "30px",
+                    left: "55%",
+                    transform: "translateX(-50%)",
+                    width: "170px",
+                    height: "170px",
+                    borderRadius: "50%",
+                    overflow: "hidden",
+                    zIndex: 3,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    boxShadow: "0 8px 25px rgba(0,0,0,0.4)",
+                    border: "4px solid #fff",
+                    animation: "pulse 2s infinite",
                   }}
-                  onMouseOver={(e) => (e.currentTarget.style.transform = "scale(1.05)")}
-                  onMouseOut={(e) => (e.currentTarget.style.transform = "scale(1)")}
                 >
+                  {/* Image Background */}
                   <img
-                    src={Preview3}
-                    alt="Ultimate Bacon Burger"
+                    src={Preview2}
+                    alt="Discount Badge"
                     style={{
-                      width: "100px",
-                      marginBottom: "10px",
-                      borderRadius: "10px",
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      zIndex: 1,
                     }}
                   />
-                  <p
+                  
+                  {/* Price Text */}
+                  <div
                     style={{
+                      position: "relative",
+                      zIndex: 2,
                       color: "#fff",
-                      fontSize: "15px",
-                      fontWeight: "700",
-                      margin: 0,
-                      textShadow: "1px 1px 2px rgba(0,0,0,0.3)",
+                      textAlign: "center",
+                      textShadow: "2px 2px 4px rgba(0,0,0,0.8)",
                     }}
                   >
-                    Ultimate Bacon <br /> Burger
-                  </p>
+                    <div style={{ fontSize: "14px", fontWeight: "700", marginBottom: "2px" }}>ONLY</div>
+                    <div style={{ fontSize: "28px", fontWeight: "900", lineHeight: "1" }}>$9.99</div>
+                    <div style={{ fontSize: "11px", fontWeight: "600", marginTop: "2px" }}>TODAY ONLY</div>
+                  </div>
                 </div>
 
-                {/* Card 2 */}
+                {/* Enhanced Cards */}
                 <div
                   style={{
-                    backgroundColor: "rgba(255, 152, 0, 0.95)",
-                    padding: "20px 25px",
-                    borderRadius: "15px",
-                    textAlign: "center",
-                    border: "2px solid rgba(255, 255, 255, 0.6)",
-                    width: "200px",
-                    cursor: "pointer",
-                    boxShadow: "0 8px 20px rgba(0,0,0,0.2)",
-                    transition: "transform 0.3s ease",
+                    position: "absolute",
+                    right: "-60px",
+                    top: "12%",
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "25px",
+                    zIndex: 3,
                   }}
-                  onMouseOver={(e) => (e.currentTarget.style.transform = "scale(1.05)")}
-                  onMouseOut={(e) => (e.currentTarget.style.transform = "scale(1)")}
                 >
-                  <img
-                    src={Preview4}
-                    alt="Grilled Chicken Burger"
+                  {/* Card 1 - Enhanced */}
+                  <div
                     style={{
-                      width: "100px",
-                      marginBottom: "10px",
-                      borderRadius: "10px",
+                      padding: "20px 15px",
+                      borderRadius: "20px",
+                      textAlign: "center",
+                      border: "3px solid rgba(255, 255, 255, 0.8)",
+                      width: "180px",
+                      cursor: "pointer",
+                      boxShadow: "0 12px 30px rgba(0,0,0,0.3)",
+                      transition: "all 0.4s ease",
+                      backdropFilter: "blur(12px)",
+                      backgroundColor: "rgba(255, 255, 255, 0.15)",
+                      position: "relative",
+                      overflow: "hidden",
                     }}
-                  />
-                  <p
-                    style={{
-                      color: "#fff",
-                      fontSize: "15px",
-                      fontWeight: "700",
-                      margin: 0,
-                      textShadow: "1px 1px 2px rgba(0,0,0,0.3)",
+                    onMouseOver={(e) => {
+                      e.currentTarget.style.transform = "scale(1.08) translateY(-5px)";
+                      e.currentTarget.style.boxShadow = "0 20px 40px rgba(0,0,0,0.4)";
+                      e.currentTarget.style.borderColor = "#ffb300";
+                    }}
+                    onMouseOut={(e) => {
+                      e.currentTarget.style.transform = "scale(1)";
+                      e.currentTarget.style.boxShadow = "0 12px 30px rgba(0,0,0,0.3)";
+                      e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.8)";
                     }}
                   >
-                    Grilled Chicken <br /> Burger
-                  </p>
+                    {/* Popular Badge */}
+                    <div
+                      style={{
+                        position: "absolute",
+                        top: "8px",
+                        right: "8px",
+                        backgroundColor: "#e50914",
+                        color: "#fff",
+                        padding: "3px 8px",
+                        borderRadius: "12px",
+                        fontSize: "9px",
+                        fontWeight: "800",
+                        textTransform: "uppercase",
+                      }}
+                    >
+                      Popular
+                    </div>
+                    
+                    <img
+                      src={Preview3}
+                      alt="Classic Burger"
+                      style={{
+                        width: "100px",
+                        height: "100px",
+                        marginBottom: "12px",
+                        borderRadius: "12px",
+                        objectFit: "cover",
+                        border: "2px solid rgba(255, 255, 255, 0.5)",
+                      }}
+                    />
+                    <h4
+                      style={{
+                        color: "#fff",
+                        fontSize: "16px",
+                        fontWeight: "800",
+                        margin: "0 0 6px 0",
+                        textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+                      }}
+                    >
+                      Classic Burger
+                    </h4>
+                    <div
+                      style={{
+                        color: "#ffb300",
+                        fontSize: "18px",
+                        fontWeight: "900",
+                        marginBottom: "5px",
+                      }}
+                    >
+                      $11.99
+                    </div>
+                    <div style={{ color: "#fff", fontSize: "10px", opacity: "0.9" }}>
+                      Beef • Cheese • Lettuce
+                    </div>
+                  </div>
+
+                  {/* Card 2 - Enhanced */}
+                  <div
+                    style={{
+                      padding: "20px 15px",
+                      borderRadius: "20px",
+                      textAlign: "center",
+                      border: "3px solid rgba(255, 255, 255, 0.8)",
+                      width: "180px",
+                      cursor: "pointer",
+                      boxShadow: "0 12px 30px rgba(0,0,0,0.3)",
+                      transition: "all 0.4s ease",
+                      backdropFilter: "blur(12px)",
+                      backgroundColor: "rgba(255, 255, 255, 0.15)",
+                      position: "relative",
+                      overflow: "hidden",
+                    }}
+                    onMouseOver={(e) => {
+                      e.currentTarget.style.transform = "scale(1.08) translateY(-5px)";
+                      e.currentTarget.style.boxShadow = "0 20px 40px rgba(0,0,0,0.4)";
+                      e.currentTarget.style.borderColor = "#ffb300";
+                    }}
+                    onMouseOut={(e) => {
+                      e.currentTarget.style.transform = "scale(1)";
+                      e.currentTarget.style.boxShadow = "0 12px 30px rgba(0,0,0,0.3)";
+                      e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.8)";
+                    }}
+                  >
+                    {/* New Badge */}
+                    <div
+                      style={{
+                        position: "absolute",
+                        top: "8px",
+                        right: "8px",
+                        backgroundColor: "#ffb300",
+                        color: "#000",
+                        padding: "3px 8px",
+                        borderRadius: "12px",
+                        fontSize: "9px",
+                        fontWeight: "800",
+                        textTransform: "uppercase",
+                      }}
+                    >
+                      New
+                    </div>
+                    
+                    <img
+                      src={Preview4}
+                      alt="Ultimate Bacon Burger"
+                      style={{
+                        width: "100px",
+                        height: "100px",
+                        marginBottom: "12px",
+                        borderRadius: "12px",
+                        objectFit: "cover",
+                        border: "2px solid rgba(255, 255, 255, 0.5)",
+                      }}
+                    />
+                    <h4
+                      style={{
+                        color: "#fff",
+                        fontSize: "16px",
+                        fontWeight: "800",
+                        margin: "0 0 6px 0",
+                        textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+                      }}
+                    >
+                      Ultimate Bacon
+                    </h4>
+                    <div
+                      style={{
+                        color: "#ffb300",
+                        fontSize: "18px",
+                        fontWeight: "900",
+                        marginBottom: "5px",
+                      }}
+                    >
+                      $14.99
+                    </div>
+                    <div style={{ color: "#fff", fontSize: "10px", opacity: "0.9" }}>
+                      Double Beef • Bacon • Cheese
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </Col>
-        </Row>
-      </Container>
-    </section>
+            </Col>
+          </Row>
+        </Container>
+
+        {/* Add CSS animation */}
+        <style>
+          {`
+            @keyframes pulse {
+              0% { transform: translateX(-50%) scale(1); }
+              50% { transform: translateX(-50%) scale(1.05); }
+              100% { transform: translateX(-50%) scale(1); }
+            }
+          `}
+        </style>
+      </section>
     </>
   );
 }
