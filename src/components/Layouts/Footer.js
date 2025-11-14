@@ -68,7 +68,7 @@ export default function TastyBurgerFooter() {
 
         .subscribe-btn {
           padding: 15px 35px;
-          background-color: #FF9500;
+          background-color: #66050aff;
           color: white;
           border: none;
           border-radius: 0 25px 25px 0;
@@ -179,7 +179,7 @@ export default function TastyBurgerFooter() {
         }
 
         .footer-bottom {
-          background: linear-gradient(135deg, #E31837 0%, #c3070f 100%);
+          background: linear-gradient(135deg, #900b1fff 0%, #66050aff 100%);
           color: white;
           text-align: center;
           padding: 20px;
@@ -206,7 +206,7 @@ export default function TastyBurgerFooter() {
         }
 
         .scroll-top:hover {
-          background: linear-gradient(135deg, #E31837 0%, #c3070f 100%);
+          background: linear-gradient(135deg, #0b0606ff 0%, #c3070f 100%);
           transform: translateY(-3px);
           box-shadow: 0 10px 30px rgba(227, 24, 55, 0.5);
         }
@@ -346,7 +346,7 @@ export default function TastyBurgerFooter() {
         {/* Footer Bottom */}
         <div className="footer-bottom">
           <div className="container">
-            <p className="mb-0">@2024 Tasty Burger - All right reserved</p>
+            <p className="mb-0">@2025 Tasty Burger - All right reserved</p>
           </div>
         </div>
 
