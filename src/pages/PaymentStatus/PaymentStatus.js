@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useLocation, useNavigate, Link } from 'react-router-dom';
 import API from '../../api/api';
+import { CartContext } from '../../context/CartContext'; // Import CartContext instead of useCart
 
 const PaymentStatus = () => {
   const [status, setStatus] = useState('loading');
@@ -9,6 +10,9 @@ const PaymentStatus = () => {
   const [errorMessage, setErrorMessage] = useState('');
   const location = useLocation();
   const navigate = useNavigate();
+  
+  // Use useContext directly with CartContext
+  const { clearCart } = useContext(CartContext);
 
   const searchParams = new URLSearchParams(location.search);
   const orderId = searchParams.get('orderId');
@@ -30,20 +34,26 @@ const PaymentStatus = () => {
     try {
       console.log(`🔄 Checking payment status for order: ${orderId}, attempt: ${retryCount + 1}`);
       
-      // Get order details
-      const orderResponse = await API.get(`/orders/${orderId}`);
-      const orderData = orderResponse.data.data || orderResponse.data;
-      setOrder(orderData);
+      // Use the direct PhonePe status endpoint
+      const orderResponse = await API.get(`/phonepe/order-status/${orderId}`);
+      const orderData = orderResponse.data.data;
 
       console.log(`📊 Order payment status: ${orderData.paymentStatus}, order status: ${orderData.status}`);
 
       // Check payment status
       if (orderData.paymentStatus === 'completed') {
         setStatus('success');
+        setOrder(orderData);
         console.log('✅ Payment completed successfully');
+        
+        // Clear cart when payment is successful
+        if (clearCart) {
+          clearCart();
+        }
         return;
       } else if (orderData.paymentStatus === 'failed') {
         setStatus('failed');
+        setOrder(orderData);
         console.log('❌ Payment failed');
         return;
       }

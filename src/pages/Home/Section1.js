@@ -42,9 +42,9 @@ const Section1 = () => (
                     flavorful, and made with 100% premium ingredients — it's the
                     perfect bite every time.
                   </p>
-                  <a href="#section3" className="btn order_now">
-                    Order Now
-                  </a>
+                 <a href="#section3" className="btn order_now" style={{backgroundColor: '#F7941D'}}>
+  Order Now
+</a>
                 </div>
               </Col>
             </Row>

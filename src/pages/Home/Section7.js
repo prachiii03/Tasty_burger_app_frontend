@@ -14,7 +14,7 @@ function Section7() {
               Enjoy hot, fresh meals delivered straight to your door in just 30 minutes. 
               We prioritize speed, quality, and your satisfaction with every order.
             </p>
-            <Link to="tel:9998887777" className="btn btn_red px-4 py-2 rounded-0">
+            <Link to="tel:9998887777" className="btn btn_red px-4 py-2 rounded-0" style={{backgroundColor: '#8B2632'}}>
               Call Now: 999-888-7777
             </Link>
           </Col>

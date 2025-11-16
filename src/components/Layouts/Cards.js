@@ -409,17 +409,17 @@ function Cards({ id, image, rating, title, paragraph, price, renderRatingIcons }
               {paragraph}
             </Card.Text>
 
-            <div className="d-flex align-items-center justify-content-between mt-auto">
-              <div className="menu_price">
+            <div className="d-flex align-items-center justify-content-between mt-auto" >
+              <div className="menu_price" style={{backgroundColor: '#8B2632'}}>
                 <h5 className="mb-0 text-white">${price.toFixed(2)}</h5>
               </div>
               <button
                 onClick={handleAddToCart}
-                className="btn btn-primary btn-sm d-flex align-items-center"
+                className="btn btn-primary btn-sm d-flex align-items-center" style={{backgroundColor: '#F7941D'}}
                 disabled={!user}
                 title={!user ? "Please login to add to cart" : "Add to cart"}
               >
-                <i className="bi bi-bag me-1"></i>
+                <i className="bi bi-bag me-1" ></i>
                 Add To Cart
               </button>
             </div>

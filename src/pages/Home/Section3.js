@@ -193,7 +193,7 @@ function Section3() {
             <div className="ads_box ads_img1 mb-5 mb-md-0">
               <h4 className="mb-0">LIMITED TIME OFFER</h4>
               <h5>FREE CHEESE FRIES</h5>
-              <Link to="/" className="btn btn_red px-4 rounded-0">
+              <Link to="/" className="btn btn_red px-4 rounded-0" style={{backgroundColor: '#8B2632'}}>
                 Learn More
               </Link>
             </div>
@@ -202,7 +202,7 @@ function Section3() {
             <div className="ads_box ads_img2">
               <h4 className="mb-0">WEEKEND SPECIAL</h4>
               <h5>BUY 1 GET 1 FREE</h5>
-              <Link to="/" className="btn btn_red px-4 rounded-0">
+              <Link to="/" className="btn btn_red px-4 rounded-0" style={{backgroundColor: '#8B2632'}}>
                 Learn More
               </Link>
             </div>

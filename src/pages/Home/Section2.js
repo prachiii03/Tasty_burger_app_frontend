@@ -37,9 +37,9 @@ function Section2() {
                 crunchy veggies, and delicious sauces — made to bring everyone
                 around the table together.
               </p>
-              <Link to="/" className="btn order_now btn_red">
-                Explore Full Menu
-              </Link>
+             <Link to="/menu" className="btn order_now btn_red" style={{backgroundColor: '#8B2632'}}>
+  Explore Full Menu
+</Link>
             </Col>
           </Row>
         </Container>

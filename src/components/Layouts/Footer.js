@@ -68,7 +68,7 @@ export default function TastyBurgerFooter() {
 
         .subscribe-btn {
           padding: 15px 35px;
-          background-color: #66050aff;
+          background-color: #8B2632;
           color: white;
           border: none;
           border-radius: 0 25px 25px 0;
@@ -133,7 +133,7 @@ export default function TastyBurgerFooter() {
         }
 
         .footer-column ul li a:hover {
-          color: #FF9500;
+          color: #F7941D;
         }
 
         .address-text {
@@ -142,7 +142,7 @@ export default function TastyBurgerFooter() {
         }
 
         .map-link {
-          color: #FF9500;
+          color: #F7941D;
           text-decoration: underline;
           cursor: pointer;
           transition: color 0.3s;
@@ -166,7 +166,7 @@ export default function TastyBurgerFooter() {
           align-items: center;
           justify-content: center;
           border-radius: 50%;
-          background-color: #FF9500;
+          background-color: #F7941D;
           color: white;
           text-decoration: none;
           transition: all 0.3s;
@@ -191,7 +191,7 @@ export default function TastyBurgerFooter() {
           right: 30px;
           width: 50px;
           height: 50px;
-          background: linear-gradient(135deg, #FF9500 0%, #FFB340 100%);
+          background: linear-gradient(135deg, #F7941D 0%, #FFB340 100%);
           color: white;
           border: 3px solid #fff;
           border-radius: 50%;
